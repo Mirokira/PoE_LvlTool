@@ -40,19 +40,24 @@ IniRead, Act, %config%, "General", "Act"
 
 IniRead, Forwards, %config%, "Hotkeys", "Forwards"
 IniRead, Backwards, %config%, "Hotkeys", "Backwards"
+IniRead, ShowHide, %config%, "Hotkeys", "ShowHide"
 IniRead, CloseP, %config%, "Hotkeys", "Close"
 IniRead, Save, %config%, "Hotkeys", "SaveProgress"
+IniRead, ResetP, %config%, "Hotkeys", "ResetProgress"
 
 
 Hotkey %Forwards%, Forwards
 Hotkey %Backwards%, Backwards
+Hotkey %ShowHide%, ShowHide
 Hotkey %CloseP%, CloseP
 Hotkey %Save%, Save
+Hotkey %ResetP%, ResetP
 
+/*
 ;Load Act
 FileReadLine, ActPH, config.ini, 3
 StringTrimLeft, Act, ActPH, 6
-
+*/
 ;Set Text first time
 gosub, GetStepsText
 
@@ -81,8 +86,8 @@ Save: ;Save Progress
 gosub, SaveProgress
 return
 
-/*
-F4:: ;Show/Hide Gui
+
+ShowHide: ;Show/Hide Gui
 if(ShowBool == false){
 	gosub, UpdateText
 	}else{
@@ -90,14 +95,14 @@ if(ShowBool == false){
 }
 ShowBool := !ShowBool
 return
-*/
+
 
 CloseP:
 gosub, SaveProgress
 ExitApp
 
 
-F8::
+ResetP:
 LastStep := 1
 Act := 1
 gosub, GetStepsText
