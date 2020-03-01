@@ -15,7 +15,9 @@ config = %A_ScriptDir%\config.ini
 
 
 ;FileRead, Config, Config.ini
-FileRead, Steps, *t Steps.txt
+IniRead, Guide, %config%, "General", "Guide"
+
+FileRead, Steps, *t %Guide%
 
 ;Var Initiation
 CurrentStep = Errors
