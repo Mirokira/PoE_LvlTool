@@ -355,7 +355,7 @@ Gui, 33:New, +AlwaysOnTop -SysMenu -Caption +Owner
 Gui, 33:Font, s10 w600 q5, Arial
 ;Add texts
 Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% ; adjust y+n if needed
+Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% ; adjust y+n if needed
 Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 ;make transparent
 Gui, 33: Color, 000000 ;Background Color

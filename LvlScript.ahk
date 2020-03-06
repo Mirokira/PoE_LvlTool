@@ -220,7 +220,7 @@ else if (StrSC == 002)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	;make transparent
 	Gui, 33: Color, 000000 ;Background Color
@@ -295,7 +295,7 @@ else if (StrSC == 003)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2%`n-%PHStep3% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2%`n-%PHStep3% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	Gui, 33:Add, Picture, , Pictures/ThreeWayFork.png
 	;make transparent
@@ -317,7 +317,7 @@ else if ( StrSC == 010 or StrSC == 012 or StrSC == 015)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	
 	if (StrSC == 010)
@@ -355,7 +355,7 @@ Gui, 33:New, +AlwaysOnTop -SysMenu -Caption +Owner
 Gui, 33:Font, s10 w600 q5, Arial
 ;Add texts
 Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% ; adjust y+n if needed
+Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% ; adjust y+n if needed
 Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 ;make transparent
 Gui, 33: Color, 000000 ;Background Color
