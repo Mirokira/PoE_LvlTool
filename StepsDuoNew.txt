@@ -45,8 +45,8 @@ Enter Highgate.
 -001-Enter The Dried Lake.
 High: Dried Lake Kill Voll(Swirl) -> Mines 2 (Swirl)
 Run Normal Labyrinth
-A: Daresso
-B: Kaom
+A: Daresso (Swirl TP)
+B: Kaom (Swirl TP)
 Higher: Belly -> Solo Piety (TP)
 Lower: Farm
 Higher: Harverst Organs Solo Mal to Phase 2 2/3 (Swirl)
