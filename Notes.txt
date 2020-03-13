@@ -1,19 +1,28 @@
+PoB: https://pastebin.com/bHsApM9i
+
+PoB Notes
+Guide for Endgame: http://www.pathofexile.com/forum/view-thread/2581551
+
 Search for BBG and Movement Speed Boots (Ctrl+F "nn")
 
 Ascendancy
-Swift Killer
+Swift Killer (Will be Respecced Later)
 Ghost Dance
 Patient Reaper
 Escape Artist / Maybe Swap in Prolonged Pain for Swift Killer
 
 
-
+For Merveil
 Magic Wand + Topaz Ring + Alteration = Added Lightning Damage
+Buy Saphire Ring or (Irong Ring + Blue Gem)
+
+Later
+Magic Wand + Rare Topaz Ring + Alteration = lvl 20 Added Lightning Damage
+
 
 Links (lvl 1-12):
 Stormblast Mine (Reward Tarkleigh) / Lesser Poison (Start) / Swift Assembly (Hailrake)
 Frost Bomb (Eggs) / Added Lightning (Brutus) / Onslaught Support (Hillock)
-PoB: https://pastebin.com/tt6iyauV
 
 Orb of Storms (Reward Tarkleigh) / Flame Dash (Brutus)/ Arcane Surge (Hailrake)
 Smoke Mine (Brutus)
@@ -63,8 +72,3 @@ Discipline
 Malevolence
 
 Put in Spreading Rot Cobalt Jewel
-
-
-
-
-
