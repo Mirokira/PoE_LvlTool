@@ -6577,12 +6577,12 @@ SocketGroup "BBG" "BBBG" "BBBB" "BBBBG" "BGG"
 SetBorderColor 0 0 0 255
 SetFontSize 45
 Class "Wands" "Body Armours" "Boots" "Gloves" "Helmets"
-SetTextColor 0 0 0 255
-SetBackgroundColor 249 150 25 255
-PlayAlertSound 2 300
+SetTextColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
 PlayEffect White
 DisableDropSound True
 MinimapIcon 2 Blue Circle
+PlayAlertSound 1 300
 
 Show # %REMS1 %D5
 	LinkedSockets 4
