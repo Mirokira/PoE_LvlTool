@@ -32,11 +32,14 @@ ShowBool = true
 FBool = false
 ForwardBool = true
 
+
 ;---------------------------------------------------------
 
 ;Load LastStep
 IniRead, LastStep, %config%, "General", "LastStep"
 IniRead, Act, %config%, "General", "Act"
+IniRead, GuiPosX, %config%, "General", "GuiPosX"
+IniRead, GuiPosY, %config%, "General", "GuiPosY"
 
 IniRead, Forwards, %config%, "Hotkeys", "Forwards"
 IniRead, Backwards, %config%, "Hotkeys", "Backwards"
@@ -53,17 +56,17 @@ Hotkey %CloseP%, CloseP
 Hotkey %Save%, Save
 Hotkey %ResetP%, ResetP
 
-/*
-;Load Act
-FileReadLine, ActPH, config.ini, 3
-StringTrimLeft, Act, ActPH, 6
-*/
+;Set x,y variables for GuiShow
+xv = X%GuiPosX%
+yv = Y%GuiPosY%
+
 ;Set Text first time
 gosub, GetStepsText
 
 ;Gui show
 gosub UpdateText
-;-----------------------------------------------------------
+
+
 ;Hotkeys
 Forwards: ;Step forward
 LastStep++
@@ -220,14 +223,14 @@ else if (StrSC == 002)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	;make transparent
 	Gui, 33: Color, 000000 ;Background Color
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 
 }
 else if (StrSC == 003)
@@ -295,7 +298,7 @@ else if (StrSC == 003)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2%`n-%PHStep3% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% `n-%PHStep1%`n-%PHStep2%`n-%PHStep3% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	Gui, 33:Add, Picture, , Pictures/ThreeWayFork.png
 	;make transparent
@@ -303,7 +306,7 @@ else if (StrSC == 003)
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 	
 	
 }
@@ -317,7 +320,7 @@ else if ( StrSC == 010 or StrSC == 012 or StrSC == 015)
 	Gui, 33:Font, s10 w600 q5, Arial
 	;Add texts
 	Gui, 33:Add, Text, vAct w800 c008000 Left, Act %Act%
-	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step: `n%CurrentStep% ; adjust y+n if needed
+	Gui, 33:Add, Text, vCS xp y+10 wp cFFFF00 Left, Current Step %LastStep%: `n%CurrentStep% ; adjust y+n if needed
 	Gui, 33:Add, Text, vNS Xp y+10 wp cFF0000 Left, Next Step: `n%NextStep% ;%NextStep%
 	
 	if (StrSC == 010)
@@ -338,7 +341,7 @@ else if ( StrSC == 010 or StrSC == 012 or StrSC == 015)
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 }
 else
 {
@@ -362,7 +365,7 @@ Gui, 33: Color, 000000 ;Background Color
 Gui, 33: +LastFound ;set active gui for line below
 WinSet, TransColor, 000000
 ;Show
-Gui, 33:Show, X40 Y170 NoActivate, Act
+Gui, 33:Show, %xv% %yv% NoActivate, Act
 return
 
 SaveProgress:

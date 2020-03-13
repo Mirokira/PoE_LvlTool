@@ -32,11 +32,14 @@ ShowBool = true
 FBool = false
 ForwardBool = true
 
+
 ;---------------------------------------------------------
 
 ;Load LastStep
 IniRead, LastStep, %config%, "General", "LastStep"
 IniRead, Act, %config%, "General", "Act"
+IniRead, GuiPosX, %config%, "General", "GuiPosX"
+IniRead, GuiPosY, %config%, "General", "GuiPosY"
 
 IniRead, Forwards, %config%, "Hotkeys", "Forwards"
 IniRead, Backwards, %config%, "Hotkeys", "Backwards"
@@ -53,17 +56,17 @@ Hotkey %CloseP%, CloseP
 Hotkey %Save%, Save
 Hotkey %ResetP%, ResetP
 
-/*
-;Load Act
-FileReadLine, ActPH, config.ini, 3
-StringTrimLeft, Act, ActPH, 6
-*/
+;Set x,y variables for GuiShow
+xv = X%GuiPosX%
+yv = Y%GuiPosY%
+
 ;Set Text first time
 gosub, GetStepsText
 
 ;Gui show
 gosub UpdateText
-;-----------------------------------------------------------
+
+
 ;Hotkeys
 Forwards: ;Step forward
 LastStep++
@@ -227,7 +230,7 @@ else if (StrSC == 002)
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 
 }
 else if (StrSC == 003)
@@ -303,7 +306,7 @@ else if (StrSC == 003)
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 	
 	
 }
@@ -338,7 +341,7 @@ else if ( StrSC == 010 or StrSC == 012 or StrSC == 015)
 	Gui, 33: +LastFound ;set active gui for line below
 	WinSet, TransColor, 000000
 	;Show
-	Gui, 33:Show, X40 Y170 NoActivate, Act
+	Gui, 33:Show, %xv% %yv% NoActivate, Act
 }
 else
 {
@@ -362,7 +365,7 @@ Gui, 33: Color, 000000 ;Background Color
 Gui, 33: +LastFound ;set active gui for line below
 WinSet, TransColor, 000000
 ;Show
-Gui, 33:Show, X40 Y170 NoActivate, Act
+Gui, 33:Show, %xv% %yv% NoActivate, Act
 return
 
 SaveProgress:
